@@ -1,0 +1,79 @@
+---
+---
+
+<section class="hero">
+	<div class="background-overlay"></div>
+	<div class="hero-content">
+		<h1>El futuro del<br/><span class="gradient-text">derecho digital</span></h1>
+		<p>Soluciones legales innovadoras impulsadas por tecnología de vanguardia</p>
+	</div>
+</section>
+
+<style>
+	.hero {
+		height: 100vh;
+		background-image: url('https://images.unsplash.com/photo-1498550744921-75f79806b8a7?auto=format&fit=crop&q=80');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.background-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.8) 0%,
+			rgba(0, 0, 0, 0.9) 100%
+		);
+		z-index: 1;
+	}
+
+	.hero::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+		z-index: 2;
+	}
+
+	.hero-content {
+		z-index: 3;
+		max-width: 800px;
+		padding: 0 2rem;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 8vw, 5rem);
+		font-weight: 700;
+		line-height: 1.1;
+		margin-bottom: 1.5rem;
+		color: #ffffff;
+	}
+
+	.gradient-text {
+		background: linear-gradient(135deg, #60a5fa, #a78bfa);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	p {
+		font-size: clamp(1.1rem, 3vw, 1.5rem);
+		color: #86868b;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+</style>

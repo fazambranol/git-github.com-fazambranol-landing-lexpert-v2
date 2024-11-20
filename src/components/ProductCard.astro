@@ -1,0 +1,76 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	icon: string;
+	gradient: 'blue' | 'purple';
+}
+
+const { title, description, icon, gradient } = Astro.props;
+---
+
+<div class={`product-card ${gradient}`}>
+	<div class="icon">{icon}</div>
+	<h2>{title}</h2>
+	<p>{description}</p>
+	<button>Explorar</button>
+</div>
+
+<style>
+	.product-card {
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 20px;
+		padding: 2rem;
+		backdrop-filter: blur(10px);
+		transition: all 0.3s ease;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.product-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+	}
+
+	.blue:hover {
+		border-color: #60a5fa;
+	}
+
+	.purple:hover {
+		border-color: #a78bfa;
+	}
+
+	.icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, #fff, #86868b);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	p {
+		color: #86868b;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	button {
+		background: rgba(255, 255, 255, 0.1);
+		border: none;
+		padding: 0.8rem 1.5rem;
+		border-radius: 25px;
+		color: #fff;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	button:hover {
+		background: rgba(255, 255, 255, 0.2);
+	}
+</style>

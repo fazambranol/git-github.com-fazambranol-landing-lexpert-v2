@@ -1,0 +1,107 @@
+---
+import PricingCard from './PricingCard.astro';
+---
+
+<section class="pricing" id="planes">
+	<div class="pricing-header">
+		<h2>Planes</h2>
+		<p>Elige el plan que mejor se adapte a tus necesidades</p>
+	</div>
+	<div class="pricing-grid">
+		<PricingCard
+			plan="Gratis"
+			price="Gratis"
+			features={[
+				"Acceso básico a resoluciones",
+				"Búsqueda simple",
+				"1 usuario",
+				"Soporte por email"
+			]}
+		/>
+		<PricingCard
+			plan="Básico"
+			price="29"
+			features={[
+				"Acceso completo a resoluciones",
+				"Búsqueda avanzada",
+				"3 usuarios",
+				"Soporte prioritario",
+				"Exportación PDF"
+			]}
+		/>
+		<PricingCard
+			plan="Profesional"
+			price="99"
+			popular={true}
+			features={[
+				"Todo lo del plan Básico",
+				"Análisis predictivo",
+				"10 usuarios",
+				"Soporte 24/7",
+				"API access",
+				"Reportes personalizados"
+			]}
+		/>
+		<PricingCard
+			plan="Empresas"
+			price="299"
+			features={[
+				"Todo lo del plan Profesional",
+				"Usuarios ilimitados",
+				"Integración personalizada",
+				"Account Manager dedicado",
+				"SLA garantizado",
+				"Hosting privado"
+			]}
+		/>
+	</div>
+</section>
+
+<style>
+	.pricing {
+		padding: 6rem 1rem;
+		background: linear-gradient(to bottom, #000 0%, #111 100%);
+	}
+
+	.pricing-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	h2 {
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 700;
+		background: linear-gradient(135deg, #fff, #86868b);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: 1rem;
+	}
+
+	.pricing-header p {
+		color: #86868b;
+		font-size: 1.25rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.pricing-grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 2rem;
+		padding: 0 1rem;
+	}
+
+	@media (min-width: 640px) {
+		.pricing-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.pricing-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+</style>

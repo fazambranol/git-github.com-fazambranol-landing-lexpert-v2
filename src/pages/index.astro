@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Hero from '../components/Hero.astro';
+import PricingSection from '../components/PricingSection.astro';
+---
+
+<Layout title="LegalTech Solutions">
+	<Navigation />
+	<main>
+		<Hero />
+		<section class="products" id="productos">
+			<div class="section-header">
+				<h2>Productos</h2>
+			</div>
+			<div class="products-grid">
+				<ProductCard
+					title="Tribunal de libre competencia"
+					description="Accede a resoluciones y jurisprudencia del Tribunal de Libre Competencia con nuestra avanzada plataforma de búsqueda impulsada por IA."
+					icon="⚖️"
+					gradient="blue"
+				/>
+				<ProductCard
+					title="Laudos Arbitrales"
+					description="Explora nuestra extensa base de datos de laudos arbitrales con análisis predictivo y búsqueda semántica."
+					icon="📜"
+					gradient="purple"
+				/>
+			</div>
+		</section>
+		<section class="coming-soon">
+			<div class="section-header">
+				<h2>Próximamente nuevos productos</h2>
+			</div>
+			<div class="coming-soon-content">
+				<div class="blur-card">
+					<div class="gear-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+							<path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+							<path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+						</svg>
+					</div>
+					<p>Estamos trabajando en nuevas soluciones innovadoras para transformar el sector legal</p>
+				</div>
+			</div>
+		</section>
+		<PricingSection />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		width: 100%;
+		color: #f5f5f7;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-header h2 {
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 700;
+		background: linear-gradient(135deg, #fff, #86868b);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.products, .coming-soon {
+		padding: 6rem 1rem;
+		background: #000;
+	}
+
+	.products-grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		padding: 0 1rem;
+	}
+
+	.coming-soon-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.blur-card {
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 20px;
+		padding: 3rem 2rem;
+		text-align: center;
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		transition: all 0.3s ease;
+	}
+
+	.blur-card:hover {
+		transform: translateY(-5px);
+		border-color: rgba(255, 255, 255, 0.2);
+	}
+
+	.gear-icon {
+		width: 80px;
+		height: 80px;
+		margin: 0 auto 1.5rem;
+		color: #60a5fa;
+		animation: spin 10s linear infinite;
+	}
+
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.blur-card p {
+		color: #86868b;
+		font-size: 1.25rem;
+		line-height: 1.6;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	@media (min-width: 768px) {
+		.products-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>
